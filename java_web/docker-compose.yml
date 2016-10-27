@@ -1,0 +1,12 @@
+version: '2'
+services:
+  web:
+    image: tomcat:9
+    depends_on:
+      - memcached
+    volumes:
+      - ./target/:/usr/local/tomcat/webapps
+    ports:
+      - 8080:8080
+  memcached:
+    image: memcached:latest
