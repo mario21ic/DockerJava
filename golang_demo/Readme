@@ -1,0 +1,6 @@
+Local:
+$ gvp source .
+$ gpm install
+
+Docker
+docker-compose up

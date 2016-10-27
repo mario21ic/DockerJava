@@ -1,0 +1,10 @@
+version: '2'
+services:
+  odoo:
+    volumes:
+      - ./odoo_vps:/mnt/extra-addons/odoo_vps
+    ports:
+      - 8069:8069
+  database:
+    ports:
+      - 5432:5432

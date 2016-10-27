@@ -1,0 +1,10 @@
+version: '2'
+services:
+  backend:
+    build:
+      context: .
+    volumes:
+      - ./src/:/app/
+    command: python main.py
+    ports:
+      - 8080:8080

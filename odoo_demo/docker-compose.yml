@@ -1,0 +1,19 @@
+version: '2'
+services:
+  odoo:
+    image: odoo:8.0
+    environment:
+      PGHOST: database
+      PGUSER: odoo
+      PGPASSWORD: odoo
+    depends_on:
+      - database
+  database:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: odoo
+      POSTGRES_PASSWORD: odoo
+    volumes:
+      - "db-data:/var/lib/postgresql/data"
+volumes:
+  db-data:

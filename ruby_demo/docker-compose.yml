@@ -1,0 +1,10 @@
+version: '2'
+services:
+  backend:
+    build:
+      context: .
+    volumes:
+      - ./:/app/
+    command: ruby main.rb -o 0.0.0.0 -p 4567
+    ports:
+      - 4567:4567

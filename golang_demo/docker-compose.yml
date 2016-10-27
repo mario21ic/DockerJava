@@ -1,0 +1,12 @@
+version: '2'
+services:
+  backend:
+    build:
+      context: .
+    depends_on:
+      - memcached
+    volumes:
+      - ./:/app/
+    command: go run main.go mykey myvalue
+  memcached:
+    image: memcached:latest
